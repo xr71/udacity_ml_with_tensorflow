@@ -30,3 +30,12 @@ def abserror(y, yhat):
 
 print(abserror(y, yhat))
 
+
+def mserror(y, yhat):
+    errors = []
+    for a,b in zip(y, yhat):
+        errors.append((a-b)**2)
+
+    return sum(errors)/(2*len(y))
+
+print(mserror(y, yhat))
